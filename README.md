@@ -1,4 +1,4 @@
-# ROCK PAPER SCISSOR
+# Rock Paper Scissor
 
 <table>
 <tr>
