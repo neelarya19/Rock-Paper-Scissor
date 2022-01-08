@@ -13,7 +13,7 @@ In this Webapp you can play rock paper and scissor with the bot and have the bra
 
 ## LANDING PAGE
 
-![]
+![](https://github.com/neelarya19/Rock-Paper-Scissor/blob/main/Demo/rps_landing.png)
 
 ## DEVELOPMENT
 Right now this app have some bugs I am working on it.
