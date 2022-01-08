@@ -8,7 +8,7 @@ In this Webapp you can play rock paper and scissor with the bot and have the bra
 </tr>
 </table>
 
-## LINK
+## Live Demo
 [https://rock-paper-scissor4.herokuapp.com/](https://rock-paper-scissor4.herokuapp.com/)
 
 ## LANDING PAGE
