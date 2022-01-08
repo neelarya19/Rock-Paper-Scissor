@@ -3,7 +3,7 @@
 <table>
 <tr>
 <td>
-In this Webapp YOU CAN PLAY Rock paper and scissor with the bot and have the bragging right to have defeated the Computer unlike other games like chess,Go etc. just kidding.
+In this Webapp you can play rock paper and scissor with the bot and have the bragging right to have defeated the Computer unlike other games like chess,Go etc. just kidding.
 </td>
 </tr>
 </table>
