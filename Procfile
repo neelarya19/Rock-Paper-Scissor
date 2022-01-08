@@ -1,1 +1,1 @@
-web: gunicorn CryptoPrice.wsgi --log-file -
+web: gunicorn RockPaperScissor.wsgi --log-file -
