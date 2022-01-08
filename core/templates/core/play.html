@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<style>
+    .btn-primary {
+    background-color: #388087;
+}
+</style>
+
+{% endblock %}
+
+
+
+{% block body %}
+<div class="container py-4">
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">How To Play?</h1>
+        <p class="col-md-8 fs-4">You will be playing against a <b>Bot</b> for four rounds, and you will have three options to pick from: <b>Rock, Paper and Scissors</b>.</p>
+        <ul class="col-md-8 fs-4">
+            <li><b>1</b> point for a victory</li>
+            <li><b>0</b> points for a loss</li>
+            <li><b>0</b> points for a tie to both</li>
+
+        </ul>
+        <a class="btn btn-primary btn-lg" href="{% url 'core:round' %}" type="button">Let's Play</a>
+        
+        </div>
+    </div>
+</div>
+    
+
+{% endblock %}

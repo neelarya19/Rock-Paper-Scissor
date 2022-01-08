@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% load crispy_forms_tags %}
+
+{% block css %}
+<style>
+    .Player-Move{
+
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-right: 100px;
+        margin-left: 50px;
+    }
+    .alert-custom{
+        background-color:#388087;
+        color:rgb(255, 255, 255);
+        margin-left: 50px;
+      }
+
+    .alert-custom-1{
+        background-color:#29ac3e;
+        color:rgb(255, 255, 255);
+        margin-left: 50px;
+
+    }
+
+    .Player-Name{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-right: 100px;
+        margin-left: 50px;
+    }
+    .btn-primary {
+    background-color: #15bd2b;
+}
+.btn-info {
+    background-color: #e01515;
+}
+
+.wrapper {
+  text-align: center;
+  display: inline-block;
+}
+
+.centreButtons {
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%
+}
+
+
+
+
+</style> 
+
+{% endblock %}
+
+
+
+{% block body %}
+
+
+{% if request.session.count != 4 %}
+    <div id="container">
+        <div class="Player-Move row">
+            <div class="Player-Move col-md-4">
+    
+                <h1>Round {{ request.session.count|add:"1" }} </h1>
+                <form method="POST">
+                    {{ form.as_p}}
+                    {% csrf_token %}
+                    <input class="btn btn-primary" type="submit" value="Make move">
+                </form>
+            </div>
+            <div class="col-md-4">
+                {% if request.session.count != 0 %}
+                    <h1> Score</h1>
+                    <h3>{{ name_object.Name }}  {{ request.session.player_points.Score__sum }} - {{ request.session.bot_points.Score__sum }} Bot</h3>
+                {% endif %}
+            </div>
+
+        </div>
+        
+        </div>
+
+    </div>
+{% else %}
+    <div id="container">
+        <div class="row">
+            <div class="Player-Move col-md-4">
+                <div class="alert alert-custom alert-primary" role="alert">
+                    <h3> {{ request.session.response }} in the fourth round </h3>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                {% if request.session.count != 0 %}
+                    <h1> Score</h1>
+                    <h3>{{ name_object.Name }}  {{ request.session.player_points.Score__sum }} - {{ request.session.bot_points.Score__sum }} Bot</h3>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="Player-Name container">
+        <div class="Player-Name col-md-4">
+            <div class="alert alert-custom-1 alert-primary" role="alert">
+                
+                {% if request.session.player_points.Score__sum > request.session.bot_points.Score__sum %}
+                    <h2>YOU WON THE MATCH</h2>
+                {% elif request.session.player_points.Score__sum < request.session.bot_points.Score__sum %}
+                    <h2>BOT WON THE MATCH</h2>
+                {% else %}
+                    <h2>Match IS TIED</h2>
+                
+                {% endif %}
+
+                
+            </div>
+
+        </div>
+        
+    </div>
+    <div class="container">
+
+        <div class="centreButtons">
+            <a class="btn btn-primary btn-lg" href="{% url 'home' %}" role="button">New game</a>
+        </div>
+    </div>
+    
+
+
+
+{% endif %}
+
+
+
+
+{% if request.session.count != 0 and request.session.count != 4 %}
+<div id="container">
+    <div class="Player-Name col-md-4">
+        <div class="alert alert-custom alert-primary" role="alert">
+            
+            <h3>{{ request.session.response }} <h3>
+            
+        </div>
+    </div>
+</div>
+
+
+
+{% endif %}
+
+    
+
+{% endblock %}
+
+
+
